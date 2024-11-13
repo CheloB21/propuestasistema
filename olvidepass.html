@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Usuario - INATEC</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">    
+    <link rel="apple-touch-icon" sizes="180x180" href="images/ICO/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/ICO/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/ICO/favicon-16x16.png">
+    <link rel="manifest" href="images/ICO/site.webmanifest">
+
+</head>
+<body>
+    <header>
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="images/VID.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
+        <div class="overlay"></div>
+        <div class="login-container">
+            <div class="login-box-centered">
+                <div class="logo-container">
+                    <img src="images/INATEC-LOGO-COLOR.png" alt="Logo INATEC" class="login-logo">
+                </div>
+                <div class="login-box">
+                    <h2>Recuperar Usuario</h2>
+                    <form onsubmit="return recoverUser()">
+                        <div class="form-group">
+                            <label for="username">Usuario o Correo Electrónico:</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="captcha">Escribe el siguiente código: <span id="captcha-code"></span></label>
+                            <input type="text" id="captcha" name="captcha" required>
+                        </div>
+
+                        <button type="submit" class="login-button">Recuperar Cuenta</button>
+                    </form>
+                    <div id="info-message" style="color: green; margin-top: 10px;"></div>
+                    <div id="error-message" style="color: red; margin-top: 10px;"></div>
+                    <div class="extra-options">
+                        <a href="login.html" class="link-option">Iniciar sesión</a>
+                        <a href="register.html" class="link-option">Crear cuenta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/INATEC-LOGO-COLOR.png" alt="Logo INATEC">
+            </div>
+            <div class="footer-contact">
+                <p>© 2024 ebonilla. Todos los derechos reservados.</p>
+                <p>Teléfono: +505 81239389</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/CTRicardoMorales" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/CT_Diriamba" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/ct_diriamba/" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://whatsapp.com/channel/0029VaCeeSEJZg41AbLee903" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", generateCaptcha);
+
+        function generateCaptcha() {
+            const captcha = Math.floor(Math.random() * 9000) + 1000; 
+            document.getElementById("captcha-code").innerText = captcha;
+            return captcha;
+        }
+
+        function recoverUser() {
+            const captchaInput = document.getElementById("captcha").value;
+            const captchaCode = document.getElementById("captcha-code").innerText;
+
+            if (captchaInput === captchaCode) {
+                document.getElementById("info-message").innerText = "Si el usuario o correo están registrados, recibirás un mensaje con los pasos para recuperar tu cuenta.";
+                document.getElementById("error-message").innerText = ""; 
+                return false; 
+            } else {
+                document.getElementById("error-message").innerText = "El código CAPTCHA es incorrecto. Inténtalo de nuevo.";
+                return false; 
+            }
+        }
+    </script>
+</body>
+</html>
