@@ -1053,6 +1053,18 @@
   }
 }
 
+@media (max-width: 768px) {
+  .adaptative {
+    font-size: 10px;
+    overflow: auto;
+  }
+
+  .adaptative th, .adaptative td {
+    padding: 5px;
+    word-break: break-word;
+  }
+
+
 .fixed-button {
 	position: fixed;
 	bottom: -50px;

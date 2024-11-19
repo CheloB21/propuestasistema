@@ -184,6 +184,16 @@ button {
     .sobre-nosotros .historia {
         margin-right: 0; 
     }
+
+    video-background, .logo-container {  
+        display: none; 
+    }
+
+    .header-text { 
+        margin-top: 20px; 
+        text-align: center; 
+    }
+
 }
 
 

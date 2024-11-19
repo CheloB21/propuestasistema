@@ -24,6 +24,19 @@
   height: auto;
 }
 
+@media (max-width: 768px) {
+  .adaptative {
+    font-size: 10px;
+    overflow: auto;
+  }
+
+  .adaptative th, .adaptative td {
+    padding: 5px;
+    word-break: break-word;
+  }
+}
+
+
 .ui-w-100 {
   width: 100px !important;
   height: auto;
@@ -780,7 +793,7 @@
     border-top: 1px solid #f1f1f1;
     padding-top: 15px;
   }
-}
+
 
 .ui-feed h6 {
   margin-top: 7px;
