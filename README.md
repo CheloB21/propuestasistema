@@ -40,6 +40,7 @@ cd repo
 Contribuciones
 
 Las contribuciones son bienvenidas. Por favor, abre un issue para cualquier mejora o corrección.
+
 Licencia
 
 Este proyecto es únicamente con fines acádemicos, parte de la carrera Tecnología Educativa.
